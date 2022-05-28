@@ -1,11 +1,10 @@
-﻿using System;
-
-public class Course
+﻿public class Course
 {
 	
 
 	public Course()
 	{
+		
 	}
 	public Course (string n)
     {

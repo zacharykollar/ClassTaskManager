@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Course course = new Course("Math");
-Controller.CourseList.Add(course);
+Controller.AddCourse(course);
 course.AddTask(new Task("first"));
 course.AddTask(new Task("second"));
 course.AddTask(new Task("third"));
