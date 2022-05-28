@@ -9,12 +9,13 @@ public class Task
 	{
 		Name = n;
 	}
-	public string Name { get; set; }
-	public int DueDate { get; private set; }
-	public int Priority { get; set; }
-	public int Difficulty { get; set; }
-	public void TickDay()
-	{
-		
-	}
+	
+	public string Name { get; set; } = "Default";
+	public int DueDate { get; private set; } = 0;
+	public int Priority { get; set; } = 1;
+	public int Difficulty { get; set; } = 10;
+	public override string ToString()
+    {
+		return "Task: " + Name + " " + Difficulty;
+    }
 }
