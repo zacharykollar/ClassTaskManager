@@ -1,10 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("HI");
 Course course = new Course("Math");
 Controller.CourseList.Add(course);
-course.TaskList.Add(new Task("first"));
-course.TaskList.Add(new Task("second"));
-course.TaskList.Add(new Task("third"));
+course.AddTask(new Task("first"));
+course.AddTask(new Task("second"));
+course.AddTask(new Task("third"));
 foreach(Course c in Controller.CourseList)
 {
     Console.WriteLine(c);
