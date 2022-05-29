@@ -26,4 +26,16 @@
     {
 		TaskList.Remove(t);
     }
+	public void ShowAllTasks()
+    {
+		if (!TaskList.Any())
+        {
+			Console.WriteLine("No Tasks");
+			return;
+        }
+		foreach (Task t in TaskList)
+        {
+			Console.WriteLine(t);
+        }
+    }
 }

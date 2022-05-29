@@ -4,11 +4,20 @@ Controller.AddCourse(course);
 course.AddTask(new Task("first"));
 course.AddTask(new Task("second"));
 course.AddTask(new Task("third"));
-foreach(Course c in Controller.CourseList)
+Controller.ShowCourseTasks();
+while (true)
 {
-    Console.WriteLine(c);
-    foreach(Task t in c.TaskList)
+    string ex = Console.ReadLine();
+    switch (ex)
     {
-        Console.WriteLine(t);
+        case "ShowCourseTasks":
+            Controller.ShowCourseTasks();
+            break;
+        case "AddCourse":
+            Controller.AddCourse();
+            break;
+        default:
+            Console.WriteLine("Invalid Command");
+            break;
     }
 }
