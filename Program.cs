@@ -16,6 +16,9 @@ while (true)
         case "AddCourse":
             Controller.AddCourse();
             break;
+        case "AddTask":
+            Controller.AddTask();
+            break;
         default:
             Console.WriteLine("Invalid Command");
             break;
