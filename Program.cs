@@ -19,6 +19,9 @@ while (true)
         case "AddTask":
             Controller.AddTask();
             break;
+        case "Exit":
+            Environment.Exit(0);
+            break;
         default:
             Console.WriteLine("Invalid Command");
             break;

@@ -14,6 +14,6 @@
 	public int Difficulty { get; set; } = 10;
 	public override string ToString()
     {
-		return "Task: " + Name + " " + Difficulty;
+		return "Task: " + Name;
     }
 }

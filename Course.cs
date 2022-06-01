@@ -11,8 +11,7 @@
 		Name = n;
     }
 	public string Name { get; set; } = "default";
-	public int Priority { get; set; } = 1;
-	public List<Task> TaskList = new List<Task>();
+	public Dictionary<string, Task> TaskDict = new Dictionary<string, Task>();
 
 	public override string ToString()
     {
@@ -20,22 +19,21 @@
     }
 	public void AddTask(Task t)
     {
-		TaskList.Add(t);
+        TaskDict.Add(t.Name, t);
+    }
+	public void AddTask(string t)
+    {
+		AddTask(new Task(t));
     }
 	public void RemoveTask(Task t)
     {
-		TaskList.Remove(t);
+		TaskDict.Remove(t.Name);
     }
 	public void ShowAllTasks()
     {
-		if (!TaskList.Any())
+		foreach (KeyValuePair<string, Task> t in TaskDict)
         {
-			Console.WriteLine("No Tasks");
-			return;
-        }
-		foreach (Task t in TaskList)
-        {
-			Console.WriteLine(t);
+			Console.WriteLine(t.Value);
         }
     }
 }

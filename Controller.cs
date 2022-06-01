@@ -58,9 +58,8 @@
     {
         if (CourseDict.ContainsKey(course))
         {
-            Course c = null;
-            CourseDict.TryGetValue(course, out c);
-            c.AddTask(new Task(task));
+            Console.WriteLine(CourseDict[course]);
+            CourseDict[course].AddTask(new Task(task));
             return;
         }
         Console.WriteLine("Course does not exist");
