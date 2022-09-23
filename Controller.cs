@@ -1,72 +1,76 @@
-﻿public static class Controller
+﻿namespace ClassManagerApp
 {
-	public static List<Course> CourseList = new List<Course>();
-    static Dictionary<string, Course> CourseDict = new Dictionary<string, Course>();
-	public static void AddCourse(Course c)
+    public static class Controller
     {
-        CourseDict.Add(c.Name, c);
-    }
-    public static void AddCourse()
-    {
-        Console.WriteLine("Input Course Name");
-        string? name = Console.ReadLine();
-        while (name == null)
+        public static List<Course> CourseList = new List<Course>();
+        static Dictionary<string, Course> CourseDict = new Dictionary<string, Course>();
+        public static void AddCourse(Course c)
         {
-            Console.WriteLine("Please Input a Course Name");
-            name = Console.ReadLine();
+            CourseDict.Add(c.Name, c);
         }
-        try
+        public static void AddCourse()
         {
-            CourseDict.Add(name, new Course(name));
-        } catch
-        {
-            Console.WriteLine("Course Name Already Taken");
+            Console.WriteLine("Input Course Name");
+            string? name = Console.ReadLine();
+            while (name == null)
+            {
+                Console.WriteLine("Please Input a Course Name");
+                name = Console.ReadLine();
+            }
+            try
+            {
+                CourseDict.Add(name, new Course(name));
+            }
+            catch
+            {
+                Console.WriteLine("Course Name Already Taken");
+            }
         }
-    }
-    public static void RemoveCourse(Course c)
-    {
-        CourseList.Remove(c);
-    }
-    public static void ShowCourseTasks()
-    {
-        if (!CourseDict.Any())
+        public static void RemoveCourse(Course c)
         {
-            Console.WriteLine("No Courses");
-            return;
+            CourseList.Remove(c);
         }
-        foreach (KeyValuePair<string, Course> c in CourseDict)
+        public static void ShowCourseTasks()
         {
-            Console.WriteLine(c.Key);
-            c.Value.ShowAllTasks();
+            if (!CourseDict.Any())
+            {
+                Console.WriteLine("No Courses");
+                return;
+            }
+            foreach (KeyValuePair<string, Course> c in CourseDict)
+            {
+                Console.WriteLine(c.Key);
+                c.Value.ShowAllTasks();
+            }
         }
-    }
-    public static void AddTask()
-    {
-        Console.WriteLine("Input Course Name");
-        string c = Console.ReadLine();
-        Console.WriteLine("Input Task Name");
-        string t = Console.ReadLine();
-        AddTask(t, c);
-    }
-    public static void AddTask(Task task, string course)
-    {
-        if (CourseDict.ContainsKey(course))
+        public static void AddTask()
         {
-            Course c = null; 
-            CourseDict.TryGetValue(course, out c);
-            c.AddTask(task);
-            return;
+            Console.WriteLine("Input Course Name");
+            string c = Console.ReadLine();
+            Console.WriteLine("Input Task Name");
+            string t = Console.ReadLine();
+            AddTask(t, c);
         }
-        Console.WriteLine("Course does not exist");
-    }
-    public static void AddTask(string task, string course)
-    {
-        if (CourseDict.ContainsKey(course))
+        public static void AddTask(Task task, string course)
         {
-            Console.WriteLine(CourseDict[course]);
-            CourseDict[course].AddTask(new Task(task));
-            return;
+            if (CourseDict.ContainsKey(course))
+            {
+                Course c = null;
+                CourseDict.TryGetValue(course, out c);
+                c.AddTask(task);
+                return;
+            }
+            Console.WriteLine("Course does not exist");
         }
-        Console.WriteLine("Course does not exist");
+        public static void AddTask(string task, string course)
+        {
+            if (CourseDict.ContainsKey(course))
+            {
+                Console.WriteLine(CourseDict[course]);
+                CourseDict[course].AddTask(new Task(task));
+                return;
+            }
+            Console.WriteLine("Course does not exist");
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using ClassManagerApp;
+
 Course course = new Course("Math");
 Controller.AddCourse(course);
 course.AddTask(new Task("first"));
