@@ -55,7 +55,7 @@
         {
             if (CourseDict.ContainsKey(course))
             {
-                Course c = null;
+                Course? c = null;
                 CourseDict.TryGetValue(course, out c);
                 c.AddTask(task);
                 return;
