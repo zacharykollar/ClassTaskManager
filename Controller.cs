@@ -9,7 +9,12 @@
     public static void AddCourse()
     {
         Console.WriteLine("Input Course Name");
-        string name = Console.ReadLine();
+        string? name = Console.ReadLine();
+        while (name == null)
+        {
+            Console.WriteLine("Please Input a Course Name");
+            name = Console.ReadLine();
+        }
         try
         {
             CourseDict.Add(name, new Course(name));
