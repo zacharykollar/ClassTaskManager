@@ -3,9 +3,9 @@ using ClassManagerApp;
 
 Course course = new Course("Math");
 Controller.AddCourse(course);
-course.AddTask(new Task("first"));
-course.AddTask(new Task("second"));
-course.AddTask(new Task("third"));
+course.AddTask(new ClassManagerApp.Task("first"));
+course.AddTask(new ClassManagerApp.Task("second"));
+course.AddTask(new ClassManagerApp.Task("third"));
 Controller.ShowCourseTasks();
 while (true)
 {
