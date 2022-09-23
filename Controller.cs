@@ -1,6 +1,6 @@
 ﻿namespace ClassManagerApp
 {
-    public static class Controller
+    public class Controller
     {
         public static List<Course> CourseList = new List<Course>();
         static Dictionary<string, Course> CourseDict = new Dictionary<string, Course>();
@@ -8,7 +8,7 @@
         {
             CourseDict.Add(c.Name, c);
         }
-        public static void AddCourse()
+        public void AddCourse()
         {
             Console.WriteLine("Input Course Name");
             string? name = Console.ReadLine();
@@ -26,11 +26,11 @@
                 Console.WriteLine("Course Name Already Taken");
             }
         }
-        public static void RemoveCourse(Course c)
+        public void RemoveCourse(Course c)
         {
             CourseList.Remove(c);
         }
-        public static void ShowCourseTasks()
+        public void ShowCourseTasks()
         {
             if (!CourseDict.Any())
             {
@@ -43,7 +43,7 @@
                 c.Value.ShowAllTasks();
             }
         }
-        public static void AddTask()
+        public void AddTask()
         {
             Console.WriteLine("Input Course Name");
             string c = Console.ReadLine();
@@ -51,7 +51,11 @@
             string t = Console.ReadLine();
             AddTask(t, c);
         }
-        public static void AddTask(Task task, string course)
+        public void AddTask(Task task, Course course)
+        {
+
+        }
+        public void AddTask(Task task, string course)
         {
             if (CourseDict.ContainsKey(course))
             {
@@ -62,7 +66,7 @@
             }
             Console.WriteLine("Course does not exist");
         }
-        public static void AddTask(string task, string course)
+        public void AddTask(string task, string course)
         {
             if (CourseDict.ContainsKey(course))
             {
