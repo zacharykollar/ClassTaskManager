@@ -2,9 +2,9 @@
 {
     public class Controller
     {
-        public static List<Course> CourseList = new List<Course>();
-        static Dictionary<string, Course> CourseDict = new Dictionary<string, Course>();
-        public static void AddCourse(Course c)
+        private List<Course> CourseList = new List<Course>();
+        private Dictionary<string, Course> CourseDict = new Dictionary<string, Course>();
+        public void AddCourse(Course c)
         {
             CourseDict.Add(c.Name, c);
         }
