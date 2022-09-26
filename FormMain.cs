@@ -12,9 +12,23 @@ namespace ClassManagerApp
 {
     public partial class FormMain : Form
     {
+        private Controller controller;
         public FormMain()
         {
             InitializeComponent();
+            controller = new Controller();
+            controller.Courses.Add(new Course("Hi"));
+            controller.Courses.Add(new Course("bye"));
+            InitTabs();
+        }
+
+        private void InitTabs()
+        {
+            tabControlCourses.TabPages.Clear();
+            foreach (Course c in controller.Courses)
+            {
+                tabControlCourses.TabPages.Add(c.Name);
+            }
         }
     }
 }

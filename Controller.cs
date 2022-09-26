@@ -2,10 +2,10 @@
 {
     public class Controller
     {
-        private List<Course> Courses = new List<Course>();
+        public List<Course> Courses = new List<Course>();
         public void AddCourse(Course course)
         {
-            Courses.Append(course);
+            Courses.Add(course);
         }
         public void AddCourse()
         {
@@ -18,7 +18,7 @@
             }
             try
             {
-                Courses.Append(new Course(name));
+                Courses.Add(new Course(name));
             }
             catch
             {
