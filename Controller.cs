@@ -4,6 +4,7 @@
     {
         private List<Course> CourseList = new List<Course>();
         private Dictionary<string, Course> CourseDict = new Dictionary<string, Course>();
+        private HashSet<Course> Courses = new HashSet<Course>();
         public void AddCourse(Course c)
         {
             CourseDict.Add(c.Name, c);
