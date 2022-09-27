@@ -3,32 +3,6 @@
     public class Controller
     {
         public List<Course> Courses = new List<Course>();
-        public void AddCourse(Course course)
-        {
-            Courses.Add(course);
-        }
-        public void AddCourse()
-        {
-            Console.WriteLine("Input Course Name");
-            string? name = Console.ReadLine();
-            while (name == null)
-            {
-                Console.WriteLine("Please Input a Course Name");
-                name = Console.ReadLine();
-            }
-            try
-            {
-                Courses.Add(new Course(name));
-            }
-            catch
-            {
-                Console.WriteLine("Course Name Already Taken");
-            }
-        }
-        public void RemoveCourse(Course course)
-        {
-            Courses.Remove(course);
-        }
         public void ShowCourseTasks()
         {
             if (!Courses.Any())
