@@ -17,8 +17,6 @@ namespace ClassManagerApp
         {
             InitializeComponent();
             controller = new Controller();
-            controller.Courses.Add(new Course("Hi"));
-            controller.Courses.Add(new Course("bye"));
             InitTabs();
         }
 
