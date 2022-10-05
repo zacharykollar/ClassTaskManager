@@ -1,4 +1,6 @@
-﻿namespace ClassManagerApp
+﻿using System.Diagnostics;
+
+namespace ClassManagerApp
 {
     public partial class CourseControl : UserControl, IClassManagerControl
     {
@@ -20,9 +22,15 @@
         public void InitDisplay()
         {
             labelClassName.Text = Course.Name;
+            int offset = labelClassName.Height;
             foreach (Task t in Course.TaskList)
             {
-                Controls.Add(new TaskControl(t));   
+                TaskControl ctrl = new TaskControl(t)
+                {
+                    Location = new Point(0, offset),
+                };
+                Controls.Add(ctrl);
+                offset += ctrl.Height;
             }
         }
     }
