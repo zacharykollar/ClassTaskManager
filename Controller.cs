@@ -13,7 +13,6 @@
             foreach (Course c in Courses)
             {
                 Console.WriteLine(c.Name);
-                c.ShowAllTasks();
             }
         }
         public void AddTask(Task task, Course course)

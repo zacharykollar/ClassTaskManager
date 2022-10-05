@@ -17,15 +17,18 @@ namespace ClassManagerApp
         {
             InitializeComponent();
             controller = new Controller();
+            controller.Courses.Add(new Course("Math"));
+            controller.Courses[0].AddTask(new Task("Problem"));
             InitTabs();
         }
 
         private void InitTabs()
         {
             tabControlCourses.TabPages.Clear();
-            foreach (Course c in controller.Courses)
+            for (int i = 0; i < controller.Courses.Count; i++)
             {
-                tabControlCourses.TabPages.Add(c.Name);
+                tabControlCourses.TabPages.Add(controller.Courses[i].Name);
+                tabControlCourses.TabPages[i].Controls.Add(new CourseControl(controller.Courses[i]));
             }
         }
     }

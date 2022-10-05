@@ -17,6 +17,7 @@ namespace ClassManagerApp
         {
             Course = c;
             InitializeComponent();
+            InitDisplay();
         }
 
         public Course Course { get => course; set => course = value; }
@@ -28,12 +29,11 @@ namespace ClassManagerApp
 
         public void InitDisplay()
         {
+            labelClassName.Text = Course.Name;
             foreach (Task t in Course.TaskList)
             {
-                
+                Controls.Add(new TaskControl(t));   
             }
         }
-
-
     }
 }
