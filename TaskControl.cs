@@ -13,8 +13,6 @@ namespace ClassManagerApp
     public partial class TaskControl : UserControl, IClassManagerControl
     {
         private Task task;
-        private DateTime DueDate;
-        private DateTime StartDate;
         public TaskControl(Task t)
         {
             task = t;
@@ -35,6 +33,12 @@ namespace ClassManagerApp
         public void InitDisplay()
         {
             labelTaskName.Text = task.Name;
+            checkBoxComplete.Checked = task.Complete;
+            progressBarTimeLeft.Maximum = (int)(task.DueDate - task.StartDate).TotalHours;
+            progressBarTimeLeft.Value = (int)(DateTime.Now - task.StartDate).TotalHours;
+            labelStartDate.Text = task.StartDate.ToShortDateString();
+            labelEndDate.Text = task.DueDate.ToShortDateString();
+
         }
 
     }

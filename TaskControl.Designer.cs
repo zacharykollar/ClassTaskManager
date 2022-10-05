@@ -74,6 +74,7 @@
             // 
             // labelEndDate
             // 
+            this.labelEndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEndDate.AutoSize = true;
             this.labelEndDate.Location = new System.Drawing.Point(197, 31);
             this.labelEndDate.Name = "labelEndDate";
