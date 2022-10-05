@@ -17,6 +17,7 @@ namespace ClassManagerApp
         {
             task = t;
             InitializeComponent();
+            InitDisplay();
         }
 
         public void Delete()
@@ -26,7 +27,7 @@ namespace ClassManagerApp
 
         public void InitDisplay()
         {
-
+            labelTaskName.Text = task.Name;
         }
 
     }
