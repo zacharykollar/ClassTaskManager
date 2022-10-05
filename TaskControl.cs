@@ -10,25 +10,19 @@ using System.Windows.Forms;
 
 namespace ClassManagerApp
 {
-    public partial class CourseControl : UserControl
+    public partial class TaskControl : UserControl
     {
-        private Course course;
-        public CourseControl(Course c)
+        Task task;
+        public TaskControl(Task t)
         {
-            Course = c;
+            task = t;
             InitializeComponent();
         }
 
-        public Course Course { get => course; set => course = value; }
-
         public void InitDisplay()
         {
-            foreach (Task t in Course.TaskList)
-            {
-                
-            }
-        }
 
+        }
 
     }
 }
