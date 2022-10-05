@@ -20,5 +20,12 @@ namespace ClassManagerApp
         }
 
         public Course Course { get => course; set => course = value; }
+
+        public void InitDisplay()
+        {
+            
+        }
+
+
     }
 }
