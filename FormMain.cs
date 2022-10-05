@@ -19,6 +19,21 @@ namespace ClassManagerApp
             controller = new Controller();
             controller.Courses.Add(new Course("Math"));
             controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses[0].AddTask(new Task("Problem"));
+            controller.Courses.Add(new Course("English"));
+            controller.Courses[1].AddTask(new Task("Word"));
             InitTabs();
         }
 
@@ -27,7 +42,11 @@ namespace ClassManagerApp
             tabControlCourses.TabPages.Clear();
             for (int i = 0; i < controller.Courses.Count; i++)
             {
-                tabControlCourses.TabPages.Add(controller.Courses[i].Name);
+                TabPage tb = new TabPage(controller.Courses[i].Name)
+                {
+                    AutoScroll = true
+                };
+                tabControlCourses.TabPages.Add(tb);
                 tabControlCourses.TabPages[i].Controls.Add(new CourseControl(controller.Courses[i]));
             }
         }

@@ -41,13 +41,16 @@
             this.labelClassName.TabIndex = 0;
             this.labelClassName.Text = "labelClassName";
             // 
-            // ClassControl
+            // CourseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelClassName);
-            this.Name = "ClassControl";
-            this.Size = new System.Drawing.Size(275, 286);
+            this.Name = "CourseControl";
+            this.Size = new System.Drawing.Size(185, 32);
             this.ResumeLayout(false);
             this.PerformLayout();
 
