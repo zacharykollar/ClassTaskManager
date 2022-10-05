@@ -2,18 +2,33 @@
 {
 	public class Task
 	{
-		public Task()
-		{
-		}
 		public Task(string n)
 		{
 			Name = n;
-		}
+			StartDate = DateTime.Now;
+			DueDate = DateTime.Now.AddDays(1);
+            Complete = false;
+        }
 
-		public string Name { get; set; } = "Default";
-		public int DueDate { get; private set; } = 0;
-		public int Priority { get; set; } = 1;
-		public int Difficulty { get; set; } = 10;
+        public Task(string n, DateTime due)
+        {
+            Name = n;
+            StartDate = DateTime.Now;
+            DueDate = due;
+            Complete = false;
+        }
+        public Task(string n, DateTime start, DateTime due)
+        {
+            Name = n;
+            StartDate = start;
+            DueDate = due;
+            Complete = false;
+        }
+
+        public bool Complete { get; set; }
+        public string Name { get; set; }
+        public DateTime StartDate { get; private set; }
+        public DateTime DueDate { get; private set; }
 		public override string ToString()
 		{
 			return "Task: " + Name;

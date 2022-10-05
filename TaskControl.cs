@@ -12,14 +12,21 @@ namespace ClassManagerApp
 {
     public partial class TaskControl : UserControl, IClassManagerControl
     {
-        Task task;
+        private Task task;
+        private DateTime DueDate;
+        private DateTime StartDate;
         public TaskControl(Task t)
         {
             task = t;
             InitializeComponent();
             InitDisplay();
         }
-
+        public TaskControl(Task t, DateTime date)
+        {
+            task = t;
+            InitializeComponent();
+            InitDisplay();
+        }
         public void Delete()
         {
             throw new NotImplementedException();

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.labelTaskName = new System.Windows.Forms.Label();
+            this.checkBoxComplete = new System.Windows.Forms.CheckBox();
+            this.progressBarTimeLeft = new System.Windows.Forms.ProgressBar();
+            this.labelStartDate = new System.Windows.Forms.Label();
+            this.labelEndDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTaskName
@@ -41,15 +45,56 @@
             this.labelTaskName.TabIndex = 0;
             this.labelTaskName.Text = "labelTask";
             // 
+            // checkBoxComplete
+            // 
+            this.checkBoxComplete.AutoSize = true;
+            this.checkBoxComplete.Location = new System.Drawing.Point(3, 31);
+            this.checkBoxComplete.Name = "checkBoxComplete";
+            this.checkBoxComplete.Size = new System.Drawing.Size(96, 24);
+            this.checkBoxComplete.TabIndex = 1;
+            this.checkBoxComplete.Text = "Complete";
+            this.checkBoxComplete.UseVisualStyleBackColor = true;
+            // 
+            // progressBarTimeLeft
+            // 
+            this.progressBarTimeLeft.Location = new System.Drawing.Point(3, 61);
+            this.progressBarTimeLeft.Name = "progressBarTimeLeft";
+            this.progressBarTimeLeft.Size = new System.Drawing.Size(244, 36);
+            this.progressBarTimeLeft.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBarTimeLeft.TabIndex = 2;
+            // 
+            // labelStartDate
+            // 
+            this.labelStartDate.AutoSize = true;
+            this.labelStartDate.Location = new System.Drawing.Point(105, 31);
+            this.labelStartDate.Name = "labelStartDate";
+            this.labelStartDate.Size = new System.Drawing.Size(50, 20);
+            this.labelStartDate.TabIndex = 3;
+            this.labelStartDate.Text = "label1";
+            // 
+            // labelEndDate
+            // 
+            this.labelEndDate.AutoSize = true;
+            this.labelEndDate.Location = new System.Drawing.Point(197, 31);
+            this.labelEndDate.Name = "labelEndDate";
+            this.labelEndDate.Size = new System.Drawing.Size(50, 20);
+            this.labelEndDate.TabIndex = 4;
+            this.labelEndDate.Text = "label1";
+            this.labelEndDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // TaskControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.labelEndDate);
+            this.Controls.Add(this.labelStartDate);
+            this.Controls.Add(this.progressBarTimeLeft);
+            this.Controls.Add(this.checkBoxComplete);
             this.Controls.Add(this.labelTaskName);
             this.Name = "TaskControl";
-            this.Size = new System.Drawing.Size(148, 148);
+            this.Size = new System.Drawing.Size(250, 100);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +103,9 @@
         #endregion
 
         private Label labelTaskName;
+        private CheckBox checkBoxComplete;
+        private ProgressBar progressBarTimeLeft;
+        private Label labelStartDate;
+        private Label labelEndDate;
     }
 }
