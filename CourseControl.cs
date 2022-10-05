@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ClassManagerApp
 {
-    public partial class CourseControl : UserControl
+    public partial class CourseControl : UserControl, IClassManagerControl
     {
         private Course course;
         public CourseControl(Course c)
@@ -20,6 +20,11 @@ namespace ClassManagerApp
         }
 
         public Course Course { get => course; set => course = value; }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
 
         public void InitDisplay()
         {

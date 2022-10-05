@@ -10,13 +10,18 @@ using System.Windows.Forms;
 
 namespace ClassManagerApp
 {
-    public partial class TaskControl : UserControl
+    public partial class TaskControl : UserControl, IClassManagerControl
     {
         Task task;
         public TaskControl(Task t)
         {
             task = t;
             InitializeComponent();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
         }
 
         public void InitDisplay()
