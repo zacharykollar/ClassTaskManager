@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ClassManagerApp
+﻿namespace ClassManagerApp
 {
     public partial class CourseControl : UserControl, IClassManagerControl
     {
         private Course course;
         public CourseControl(Course c)
         {
-            Course = c;
+            course = c;
             InitializeComponent();
             InitDisplay();
         }
