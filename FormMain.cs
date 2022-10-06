@@ -50,5 +50,18 @@ namespace ClassManagerApp
                 tabControlCourses.TabPages[i].Controls.Add(new CourseControl(controller.Courses[i]));
             }
         }
+        private void AddCourse()
+        {
+            Tuple<DialogResult, string, DateTime> tuple = Program.InputBox("Add Course", "Input Course Name");
+            controller.Courses.Add(new Course(tuple.Item2));
+            if (tuple.Item1 != DialogResult.OK || tuple.Item2 == "")
+                return;
+            InitTabs();
+        }
+
+        private void ButtonAddCourse_Click(object sender, EventArgs e)
+        {
+            AddCourse();
+        }
     }
 }
