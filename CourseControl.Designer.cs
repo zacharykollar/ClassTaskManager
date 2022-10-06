@@ -44,7 +44,7 @@
             // 
             // buttonAddTask
             // 
-            this.buttonAddTask.Location = new System.Drawing.Point(189, 0);
+            this.buttonAddTask.Location = new System.Drawing.Point(144, 0);
             this.buttonAddTask.Name = "buttonAddTask";
             this.buttonAddTask.Size = new System.Drawing.Size(94, 32);
             this.buttonAddTask.TabIndex = 1;
@@ -62,7 +62,7 @@
             this.Controls.Add(this.buttonAddTask);
             this.Controls.Add(this.labelClassName);
             this.Name = "CourseControl";
-            this.Size = new System.Drawing.Size(286, 35);
+            this.Size = new System.Drawing.Size(241, 35);
             this.ResumeLayout(false);
             this.PerformLayout();
 
