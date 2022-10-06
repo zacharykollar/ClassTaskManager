@@ -37,14 +37,16 @@ namespace ClassManagerApp
 
         private void ButtonAddTask_Click(object sender, EventArgs e)
         {
-            Tuple<DialogResult, string> i = InputBox("Add Task", "Add Task");
-            Tuple<DialogResult, string> InputBox(string title, string message)
+            Tuple<DialogResult, string, DateTime> i = InputBox("Add Task", "Add Task");
+            Tuple<DialogResult, string, DateTime> InputBox(string title, string message)
             {
                 InputBox inputBox = new InputBox(title, message);
                 inputBox.ShowDialog();
-                return new Tuple<DialogResult, string>(inputBox.DialogResult, inputBox.Output);
+                return new Tuple<DialogResult, string, DateTime>(inputBox.DialogResult, inputBox.Output, inputBox.Time);
             }
-            course.TaskList.Add(new Task(i.Item2));
+            if (i.Item1 != DialogResult.OK || i.Item2 == "")
+                return;
+            course.TaskList.Add(new Task(i.Item2, i.Item3));
             InitDisplay();
         }
     }

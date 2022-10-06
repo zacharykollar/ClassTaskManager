@@ -32,6 +32,7 @@
             this.textBoxOut = new System.Windows.Forms.TextBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // labelMessage
@@ -52,7 +53,7 @@
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(12, 74);
+            this.buttonOk.Location = new System.Drawing.Point(12, 107);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(94, 29);
             this.buttonOk.TabIndex = 2;
@@ -62,7 +63,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(215, 74);
+            this.buttonCancel.Location = new System.Drawing.Point(215, 107);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(94, 29);
             this.buttonCancel.TabIndex = 3;
@@ -70,13 +71,21 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 74);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(297, 27);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
             // InputBox
             // 
             this.AcceptButton = this.buttonOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(321, 108);
+            this.ClientSize = new System.Drawing.Size(321, 142);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.textBoxOut);
@@ -94,5 +103,6 @@
         private TextBox textBoxOut;
         private Button buttonOk;
         private Button buttonCancel;
+        private DateTimePicker dateTimePicker1;
     }
 }
