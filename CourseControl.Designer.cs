@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.labelClassName = new System.Windows.Forms.Label();
+            this.buttonAddTask = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelClassName
@@ -41,6 +42,16 @@
             this.labelClassName.TabIndex = 0;
             this.labelClassName.Text = "labelClassName";
             // 
+            // buttonAddTask
+            // 
+            this.buttonAddTask.Location = new System.Drawing.Point(189, 0);
+            this.buttonAddTask.Name = "buttonAddTask";
+            this.buttonAddTask.Size = new System.Drawing.Size(94, 32);
+            this.buttonAddTask.TabIndex = 1;
+            this.buttonAddTask.Text = "Add Task";
+            this.buttonAddTask.UseVisualStyleBackColor = true;
+            this.buttonAddTask.Click += new System.EventHandler(this.ButtonAddTask_Click);
+            // 
             // CourseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -48,9 +59,10 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonAddTask);
             this.Controls.Add(this.labelClassName);
             this.Name = "CourseControl";
-            this.Size = new System.Drawing.Size(185, 32);
+            this.Size = new System.Drawing.Size(286, 35);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,5 +71,6 @@
         #endregion
 
         private Label labelClassName;
+        private Button buttonAddTask;
     }
 }

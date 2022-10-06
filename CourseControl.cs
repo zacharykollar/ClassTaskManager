@@ -33,5 +33,10 @@ namespace ClassManagerApp
                 offset += ctrl.Height;
             }
         }
+
+        private void ButtonAddTask_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
