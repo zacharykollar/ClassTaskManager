@@ -40,14 +40,14 @@ namespace ClassManagerApp
         {
             Tuple<DialogResult, string, DateTime> i = Program.InputBox("Add Task", "Add Task");
             
-            if (i.Item1 != DialogResult.OK || i.Item2 == "")
+            if (i.Item1 != DialogResult.OK || i.Item2 == "" || i.Item3.CompareTo(DateTime.Now) <= 0)
                 return;
             course.TaskList.Add(new Task(i.Item2, i.Item3));
             InitDisplay();
         }
+
         public delegate void DeleteCourse(Course course);
         public static event DeleteCourse DeleteCourseEvent;
-        
         private void ButtonDeleteCourse_Click(object sender, EventArgs e)
         {
             DeleteCourseEvent.Invoke(course);
