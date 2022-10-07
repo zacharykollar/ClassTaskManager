@@ -44,5 +44,12 @@ namespace ClassManagerApp
             course.TaskList.Add(new Task(i.Item2, i.Item3));
             InitDisplay();
         }
+        public delegate void DeleteCourse(Course course);
+        public static event DeleteCourse DeleteCourseEvent;
+        
+        private void ButtonDeleteCourse_Click(object sender, EventArgs e)
+        {
+            DeleteCourseEvent.Invoke(course);
+        }
     }
 }

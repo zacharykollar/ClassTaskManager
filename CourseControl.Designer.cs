@@ -30,6 +30,7 @@
         {
             this.labelClassName = new System.Windows.Forms.Label();
             this.buttonAddTask = new System.Windows.Forms.Button();
+            this.buttonDeleteCourse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelClassName
@@ -44,13 +45,23 @@
             // 
             // buttonAddTask
             // 
-            this.buttonAddTask.Location = new System.Drawing.Point(144, 0);
+            this.buttonAddTask.Location = new System.Drawing.Point(103, 3);
             this.buttonAddTask.Name = "buttonAddTask";
-            this.buttonAddTask.Size = new System.Drawing.Size(94, 32);
+            this.buttonAddTask.Size = new System.Drawing.Size(143, 32);
             this.buttonAddTask.TabIndex = 1;
             this.buttonAddTask.Text = "Add Task";
             this.buttonAddTask.UseVisualStyleBackColor = true;
             this.buttonAddTask.Click += new System.EventHandler(this.ButtonAddTask_Click);
+            // 
+            // buttonDeleteCourse
+            // 
+            this.buttonDeleteCourse.Location = new System.Drawing.Point(252, 3);
+            this.buttonDeleteCourse.Name = "buttonDeleteCourse";
+            this.buttonDeleteCourse.Size = new System.Drawing.Size(143, 32);
+            this.buttonDeleteCourse.TabIndex = 2;
+            this.buttonDeleteCourse.Text = "Delete Course";
+            this.buttonDeleteCourse.UseVisualStyleBackColor = true;
+            this.buttonDeleteCourse.Click += new System.EventHandler(this.ButtonDeleteCourse_Click);
             // 
             // CourseControl
             // 
@@ -59,10 +70,11 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonDeleteCourse);
             this.Controls.Add(this.buttonAddTask);
             this.Controls.Add(this.labelClassName);
             this.Name = "CourseControl";
-            this.Size = new System.Drawing.Size(241, 35);
+            this.Size = new System.Drawing.Size(398, 38);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,5 +84,6 @@
 
         private Label labelClassName;
         private Button buttonAddTask;
+        private Button buttonDeleteCourse;
     }
 }

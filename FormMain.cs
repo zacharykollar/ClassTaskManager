@@ -21,19 +21,15 @@ namespace ClassManagerApp
             controller.Courses[0].AddTask(new Task("Problem"));
             controller.Courses[0].AddTask(new Task("Problem"));
             controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
-            controller.Courses[0].AddTask(new Task("Problem"));
             controller.Courses.Add(new Course("English"));
             controller.Courses[1].AddTask(new Task("Word"));
+            InitTabs();
+            CourseControl.DeleteCourseEvent += DeleteCourse;
+        }
+
+        private void DeleteCourse(Course course)
+        {
+            controller.Courses.Remove(course);
             InitTabs();
         }
 
