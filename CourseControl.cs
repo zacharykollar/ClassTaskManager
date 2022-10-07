@@ -21,6 +21,7 @@ namespace ClassManagerApp
 
         public void InitDisplay()
         {
+            course.SortTasks();
             labelClassName.Text = Course.Name;
             int offset = labelClassName.Height;
             foreach (Task t in Course.TaskList)
