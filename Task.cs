@@ -2,7 +2,13 @@
 {
 	public class Task
 	{
-		public Task(string n)
+        public double TimeLeft
+        {
+            get { return (DateTime.Now - StartDate)/(DueDate - StartDate); }
+        }
+
+
+        public Task(string n)
 		{
 			Name = n;
 			StartDate = DateTime.Now;

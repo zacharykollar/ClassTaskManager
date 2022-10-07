@@ -1,4 +1,5 @@
-﻿namespace ClassManagerApp
+﻿using System.Linq;
+namespace ClassManagerApp
 {
 	public class Course
 	{
@@ -14,6 +15,14 @@
 		}
 		public string Name { get; set; } = "default";
 		public List<Task> TaskList = new();
+
+		public void SortTasks()
+		{
+			TaskList.Sort(delegate (Task a, Task b)
+			{
+				return a.TimeLeft.CompareTo(b.TimeLeft);
+			});
+		}
 
 		public override string ToString()
 		{
