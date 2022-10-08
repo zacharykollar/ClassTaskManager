@@ -16,12 +16,17 @@ namespace ClassManagerApp
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DeleteCourseEvent.Invoke(course);
         }
 
         public void InitDisplay()
         {
             course.SortTasks();
+            foreach (Control c in Controls)
+            {
+                if (c.GetType() == typeof(TaskControl))
+                    Controls.Remove(c);
+            }
             labelClassName.Text = Course.Name;
             int offset = labelClassName.Height;
             foreach (Task t in Course.TaskList)
@@ -34,6 +39,7 @@ namespace ClassManagerApp
                 offset += ctrl.Height;
             }
             buttonAddTask.Location = new Point(labelClassName.Width + 10, 0);
+            Invalidate();
         }
 
         private void ButtonAddTask_Click(object sender, EventArgs e)
@@ -50,7 +56,7 @@ namespace ClassManagerApp
         public static event DeleteCourse DeleteCourseEvent;
         private void ButtonDeleteCourse_Click(object sender, EventArgs e)
         {
-            DeleteCourseEvent.Invoke(course);
+            Delete();
         }
     }
 }
