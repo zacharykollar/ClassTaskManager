@@ -23,44 +23,44 @@ namespace ClassManagerApp
         {
             course.SortTasks();
             Controls.Clear();
-            labelClassName = new System.Windows.Forms.Label();
-            buttonAddTask = new System.Windows.Forms.Button();
-            buttonDeleteCourse = new System.Windows.Forms.Button();
+            labelClassName = new Label();
+            buttonAddTask = new Button();
+            buttonDeleteCourse = new Button();
             SuspendLayout();
             // 
             // labelClassName
             // 
             labelClassName.AutoSize = true;
-            labelClassName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            labelClassName.Location = new System.Drawing.Point(0, 0);
+            labelClassName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            labelClassName.Location = new Point(0, 0);
             labelClassName.Name = "labelClassName";
-            labelClassName.Size = new System.Drawing.Size(150, 32);
+            labelClassName.Size = new Size(150, 32);
             labelClassName.TabIndex = 0;
             labelClassName.Text = "labelClassName";
             // 
             // buttonAddTask
             // 
-            buttonAddTask.Location = new System.Drawing.Point(labelClassName.Width, 0);
+            buttonAddTask.Location = new Point(labelClassName.Width, 0);
             buttonAddTask.Name = "buttonAddTask";
             buttonAddTask.Size = new System.Drawing.Size(75, 25);
             buttonAddTask.TabIndex = 1;
             buttonAddTask.Text = "Add Task";
             buttonAddTask.UseVisualStyleBackColor = true;
-            buttonAddTask.Click += new System.EventHandler(this.ButtonAddTask_Click);
+            buttonAddTask.Click += new EventHandler(ButtonAddTask_Click);
             // 
             // buttonDeleteCourse
             // 
-            buttonDeleteCourse.Location = new System.Drawing.Point(150, 0);
+            buttonDeleteCourse.Location = new Point(labelClassName.Width - 5, 0);
             buttonDeleteCourse.Name = "buttonDeleteCourse";
-            buttonDeleteCourse.Size = new System.Drawing.Size(75, 25);
+            buttonDeleteCourse.Size = new Size(75, 25);
             buttonDeleteCourse.TabIndex = 2;
             buttonDeleteCourse.Text = "Delete Course";
             buttonDeleteCourse.UseVisualStyleBackColor = true;
-            buttonDeleteCourse.Click += new System.EventHandler(this.ButtonDeleteCourse_Click);
+            buttonDeleteCourse.Click += new EventHandler(ButtonDeleteCourse_Click);
 
-            Controls.Add(this.buttonDeleteCourse);
-            Controls.Add(this.buttonAddTask);
-            Controls.Add(this.labelClassName);
+            Controls.Add(buttonDeleteCourse);
+            Controls.Add(buttonAddTask);
+            Controls.Add(labelClassName);
 
             ResumeLayout(false);
             PerformLayout();
