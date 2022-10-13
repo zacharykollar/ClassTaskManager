@@ -20,8 +20,16 @@ namespace ClassManagerApp
 		{
 			TaskList.Sort(delegate (Task a, Task b)
 			{
-				return a.TimeLeft.CompareTo(b.TimeLeft);
-			});
+
+                if (a.Complete && b.Complete)
+                    return a.Name.CompareTo(b.Name);
+                else if (a.Complete)
+                    return 1;
+                else if (b.Complete)
+                    return -1;
+                else
+                    return a.TimeLeft.CompareTo(b.TimeLeft);
+            });
 		}
 
 		public override string ToString()
