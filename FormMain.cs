@@ -8,8 +8,11 @@
             InitializeComponent();
             controller = new Controller();
             controller.Courses.Add(new Course("Math"));
+            Task t = new Task("hell0");
+            t.Complete = true;
             controller.Courses[0].AddTask(new Task("mostt over", DateTime.Today.AddDays(-2), DateTime.Today.AddDays(1)));
             controller.Courses[0].AddTask(new Task("half", DateTime.Today.AddDays(-10), DateTime.Today.AddDays(10)));
+            controller.Courses[0].AddTask(t);
             controller.Courses[0].AddTask(new Task("No Time", DateTime.Today.AddDays(-100), DateTime.Today.AddDays(1)));
             controller.Courses.Add(new Course("English"));
             controller.Courses[1].AddTask(new Task("Word"));
