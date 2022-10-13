@@ -29,6 +29,15 @@
         private void InitTabs()
         {
             tabControlCourses.TabPages.Clear();
+
+            TabPage p = new("All Tasks")
+            {
+                AutoScroll = true
+            };
+            p.Controls.Add(new ControllerControl(controller));
+            tabControlCourses.TabPages.Add(p);
+
+
             for (int i = 0; i < controller.Courses.Count; i++)
             {
                 TabPage tb = new (controller.Courses[i].Name)
@@ -36,7 +45,7 @@
                     AutoScroll = true
                 };
                 tabControlCourses.TabPages.Add(tb);
-                tabControlCourses.TabPages[i].Controls.Add(new CourseControl(controller.Courses[i]));
+                tabControlCourses.TabPages[i + 1].Controls.Add(new CourseControl(controller.Courses[i]));
             }
         }
         private void AddCourse()

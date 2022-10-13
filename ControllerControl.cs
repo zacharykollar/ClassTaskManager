@@ -48,7 +48,7 @@ namespace ClassManagerApp
                     tasks.Add(task);
                 }
             }
-
+            
             tasks.Sort(delegate (Task a, Task b)
             {
                 if (a.Complete && b.Complete)
@@ -60,6 +60,16 @@ namespace ClassManagerApp
                 else
                     return a.TimeLeft.CompareTo(b.TimeLeft);
             });
+            int offset = labelName.Height;
+            foreach(Task t in tasks)
+            {
+                TaskControl ctrl = new TaskControl(t)
+                {
+                    Location = new Point(0, offset),
+                };
+                Controls.Add(ctrl);
+                offset += ctrl.Height;
+            }
         }
     }
 }
