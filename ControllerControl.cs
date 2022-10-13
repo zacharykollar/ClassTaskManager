@@ -40,6 +40,8 @@ namespace ClassManagerApp
             labelName.TabIndex = 0;
             labelName.Text = "Task List";
 
+            Controls.Add(labelName);
+
             List<Task> tasks = new();
 
             foreach (Course course in controller.Courses)
