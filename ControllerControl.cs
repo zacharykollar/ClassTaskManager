@@ -18,6 +18,7 @@ namespace ClassManagerApp
         {
             controller = c;
             InitializeComponent();
+            InitDisplay();
         }
 
         public void Delete()
